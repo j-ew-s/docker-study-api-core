@@ -16,7 +16,7 @@ Nosso projeto será criado a partir do CLI utilizando comandos dotnet. Para isso
 
 Você deve ter conseguido criar um projeto com o nome TesteComDocker, criando uma pasta na raiz. Poderá verificar que a versão utilizada é a 3.
 
-![image 1](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal1.png)
+![image 1](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal1.png?token=ACA666GYMQW355EYWNDUSJ256ILLA)
 
 Navegamos até a raiz do nosso projeto. Execute o comando :
 ```bash
@@ -30,7 +30,7 @@ Abra-o no editor que preferir. No caso utilizarei o Visual Studio Code (VS Code)
 
 Legal, já estamos indo bem com pouco que avançamos. Porém, é bom que façam as instalações da extensão C# e Docker (esta má circulada na imagem).
 
-![image 2](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/terminal2.png)
+![image 2](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/terminal2.png?token=ACA666HLF3JKVMRKY3KD2IK56ILNW)
 
 
 ![image 3](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal3.png)
