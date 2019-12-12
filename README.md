@@ -16,7 +16,7 @@ Nosso projeto será criado a partir do CLI utilizando comandos dotnet. Para isso
 
 Você deve ter conseguido criar um projeto com o nome TesteComDocker, criando uma pasta na raiz. Poderá verificar que a versão utilizada é a 3.
 
-![image 1](./images/Terminal1.png)
+![image 1](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal1.png)
 
 Navegamos até a raiz do nosso projeto. Execute o comando :
 ```bash
@@ -30,10 +30,10 @@ Abra-o no editor que preferir. No caso utilizarei o Visual Studio Code (VS Code)
 
 Legal, já estamos indo bem com pouco que avançamos. Porém, é bom que façam as instalações da extensão C# e Docker (esta má circulada na imagem).
 
-![image 2](./terminal2.png)
+![image 2](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/terminal2.png)
 
 
-![image 3](./images/Terminal3.png)
+![image 3](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal3.png)
 
 
 Agora execute o projeto : CTRL + F5
@@ -72,7 +72,7 @@ As palavras reservadas (instruções) do Dockerfile estão em azul, portanto evi
 Reparem que agora no projeto de vocês tem este arquivo com o símbolo do Docker.
 
 
-![image 4](./images/Terminal4.png)
+![image 4](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal4.png)
 
 
 ## Dockerfile em partes
@@ -168,12 +168,12 @@ Pode dar enter. :)
 Você pode acompanhar pelo terminal que todos os passos foram executados e que o resultado deu sucesso, indicando o número do build e o tagged como latest. Pode ser que apareça algum warning, mas isto não será coberto por este tutorial.
 
 
-![image 5](./images/Terminal5.png)
+![image 5](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal5.png)
 
 
 Agora repare que nossa imagem já fora criada e pode ser identificada :
 
-![image 6](./images/Terminal6.png)
+![image 6](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal6.png)
 
 Você também pode  ver pela linha de comando:
 
@@ -181,7 +181,7 @@ Você também pode  ver pela linha de comando:
 docker images
 ```
 
-![image 7](./images/Terminal7.png)
+![image 7](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal7.png)
 
 Pode ser que existam uma série de outras imagens abaixo e algumas com <none>, mas trataremos disso depois. 
 
@@ -197,12 +197,12 @@ O Docker run vai executar nosso container. o -p 8086:80 vai expor a porta 8086 l
 
 Espero que tenham recebido uma mensagem parecida com esta 
 
-![image 8](./images/Terminal8.png)
+![image 8](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal8.png)
 
 Com isto também podemos ver que no nossos containers agora temos um novo item o testecomdocker 
 
 
-![image 9](./images/Terminal9.png)
+![image 9](https://raw.githubusercontent.com/j-ew-s/docker-study-api-core/master/images/Terminal9.png)
 
 
 ## Teste
