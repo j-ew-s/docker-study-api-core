@@ -30,9 +30,11 @@ Abra-o no editor que preferir. No caso utilizarei o Visual Studio Code (VS Code)
 
 Legal, já estamos indo bem com pouco que avançamos. Porém, é bom que façam as instalações da extensão C# e Docker (esta má circulada na imagem).
 
-![image 2](./images/terminal2.png)
+![image 2](./terminal2.png)
+
 
 ![image 3](./images/Terminal3.png)
+
 
 Agora execute o projeto : CTRL + F5
 
@@ -69,7 +71,9 @@ As palavras reservadas (instruções) do Dockerfile estão em azul, portanto evi
 
 Reparem que agora no projeto de vocês tem este arquivo com o símbolo do Docker.
 
+
 ![image 4](./images/Terminal4.png)
+
 
 ## Dockerfile em partes
 
