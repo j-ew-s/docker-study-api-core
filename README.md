@@ -73,7 +73,7 @@ Reparem que agora no projeto de vocês tem este arquivo com o símbolo do Docker
 
 ## Dockerfile em partes
 
-### FROM
+#### FROM
 ```bash
 FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 ```
@@ -85,14 +85,14 @@ Nós  utilizaremos o SDK neste primeiro momento e não o runtime. Isto se deve p
 Você pode verificar mais versões, como as anteriores ou do Runtime neste link.
 
 
-### WORKDIR
+#### WORKDIR
 ```bash
 WORKDIR /app
 ```
 
 WORKDIR indica para onde nós vamos direcionar todo o resultado das ações em sequência. Ou seja, nossa pasta de saída, resultado. Caso não exista uma pasta app ela será criada.
 
-### COPY
+#### COPY
 ```bash
 COPY *.csproj ./
 ```
@@ -100,7 +100,7 @@ COPY *.csproj ./
 A instrução é bem explicativa mesmo. Neste passo copiamos todos (indicado por asterisco) os arquivos com extensão csproj para a indicada na instrução WORKDIR app.
 
 
-### RUN
+#### RUN
 ```bash
 RUN dotnet restore
 ```
@@ -109,7 +109,7 @@ RUN dotnet restore
 
 Simplesmente executamos o restore do csproj que fora copiada para nossa raiz. Todo o resultado da execução do restore do csproj ficará na pasta app. Isto é o suficiente para termos todos os Nuget packages atualizados.
 
-### COPY & RUN
+#### COPY & RUN
 ```bash
 COPY . ./
 RUN dotnet publish  -c Release -o out
@@ -120,7 +120,7 @@ Agora copiamos todos os arquivos restantes no nosso projeto (arquivos .cs, .json
 
 Já na sequência executamos um publish ‘dotnet publish’. A instrução publish do dotnet vai simplesmente gerar um projeto web utilizando a configuração Release ‘-c Release’ e colocar o resultado de tudo isto na pasta out ´-o out’ ficando em ‘app/out’.
 
-### FROM e WORKDIR novamente.
+#### FROM e WORKDIR novamente.
 ```bash
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1
 ```
@@ -133,15 +133,15 @@ No nosso caso, só utilizamos a primeira imagem, que é um SDK, para poder compi
 
 Com isto, vamos dizer que, para esta imagem também, teremos uma pasta principal que chama app por meio da instrução WORKDIR. Esta app não é a mesma da imagem anterior, lembre-se, são imagens diferentes.
 
-### EXPOSE
+#### EXPOSE
 
 Neste comando estamos a dizer pro docker que nosso projeto será exposto na porta 80, assim por ela iremos consumir o serviço. Calma, vamos chegar no mapeamento desta porta.
 
-### COPY com --from
+#### COPY com --from
 
 Nós chegamos a compilar utilizando a imagem que tem o alias build e o resultado dele está na pasta out dentro de app ‘app/out’. Nós podemos pegar o resultado do run desta imagem utilizando o parâmetro  --from=build.  E como endereço final utilizamos a pasta out dentro da nossa atual app (indicada no WORKDIR anteriormente).
 
-### ENTRYPOINT
+#### ENTRYPOINT
 
 O Entrypoint indica o comando que será executado (ou comandos) quando nosso container iniciar.  Assim, o que temos é dotnet e a DLL do nosso projeto, executando então nosso projeto.
 
