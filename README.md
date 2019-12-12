@@ -9,22 +9,30 @@ Não vou abordar o desenvolvimento em .Net Core 3.1, para isto utilizarei o que 
 
 ## Criando um projecto .Net Core por CLI
 
-Nosso projeto será criado a partir do CLI utilizando comandos dotnet. Para isso, navegue até um diretório onde deseja criar seu projeto. No meu caso fica em c:/github
-
-Execute o comando > dotnet new webapi -n TesteComDocker
+Nosso projeto será criado a partir do CLI utilizando comandos dotnet. Para isso, navegue até um diretório onde deseja criar seu projeto. No meu caso fica em c:/github. Execute o comando:
+```bash
+ dotnet new webapi -n TesteComDocker
+ ```
 
 Você deve ter conseguido criar um projeto com o nome TesteComDocker, criando uma pasta na raiz. Poderá verificar que a versão utilizada é a 3.
 
-Navegamos até a raiz do nosso projeto. 
+![image 1](./images/Terminal1.png)
 
-Execute o comando >  cd TesteComDocker
+Navegamos até a raiz do nosso projeto. Execute o comando :
+```bash
+ cd TesteComDocker
+ ```
 
-Abra-o no editor que preferir. No caso utilizarei o Visual Studio Code (VS Code)
-
-Execute o comando > code .
+Abra-o no editor que preferir. No caso utilizarei o Visual Studio Code (VS Code). Execute o comando:
+```bash
+ code .
+ ```
 
 Legal, já estamos indo bem com pouco que avançamos. Porém, é bom que façam as instalações da extensão C# e Docker (esta má circulada na imagem).
 
+![image 2](./images/terminal2.png)
+
+![image 3](./images/Terminal3.png)
 
 Agora execute o projeto : CTRL + F5
 
@@ -59,7 +67,9 @@ ENTRYPOINT ["dotnet", "TesteComDocker.dll"]
 
 As palavras reservadas (instruções) do Dockerfile estão em azul, portanto evite criar coisas que tenham este nome.
 
-Reparem que agora no projeto de vocês tem este arquivo com o símbolo do Docker
+Reparem que agora no projeto de vocês tem este arquivo com o símbolo do Docker.
+
+![image 4](./images/Terminal4.png)
 
 ## Dockerfile em partes
 
@@ -154,36 +164,41 @@ Pode dar enter. :)
 Você pode acompanhar pelo terminal que todos os passos foram executados e que o resultado deu sucesso, indicando o número do build e o tagged como latest. Pode ser que apareça algum warning, mas isto não será coberto por este tutorial.
 
 
-
+![image 5](./images/Terminal5.png)
 
 
 Agora repare que nossa imagem já fora criada e pode ser identificada :
 
+![image 6](./images/Terminal6.png)
 
 Você também pode  ver pela linha de comando:
 
-Execute o comando : docker images
+```bash
+docker images
+```
 
-
+![image 7](./images/Terminal7.png)
 
 Pode ser que existam uma série de outras imagens abaixo e algumas com <none>, mas trataremos disso depois. 
 
 ## Run
 
 Vamos botar pra funcionar. No mesmo terminal (na pasta raiz) vamos fazer o RUN do docker:
-```bash
-Execute o comando : docker run -p 8086:80 testecomdocker
+
+``` bash
+docker run -p 8086:80 testecomdocker
 ``` 
+
 O Docker run vai executar nosso container. o -p 8086:80 vai expor a porta 8086 localmente representando a porta 80 do docker, aquela que indicamos logo acima. Por fim, dizemos qual imagem vamos executar, no caso a testecomdocker.
 
 Espero que tenham recebido uma mensagem parecida com esta 
 
-
+![image 8](./images/Terminal8.png)
 
 Com isto também podemos ver que no nossos containers agora temos um novo item o testecomdocker 
 
 
-
+![image 9](./images/Terminal9.png)
 
 
 ## Teste
@@ -207,7 +222,7 @@ https://www.digitalocean.com/community/tutorials/how-to-remove-docker-images-con
 docker rmi -f $(docker images -f "dangling=true" -q)
 ```
 
-
+https://docs.google.com/document/d/1xAHwOkNyDVfkH7eQR8612aWeaY-OnKNHAMZT06VzMwI/edit?usp=sharing
 
 
 
